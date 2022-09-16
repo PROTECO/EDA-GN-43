@@ -56,13 +56,13 @@ Si da tiempo.
 ### **EXAMEN DIAGNÓSTICO**.
     Fecha limite: 2022-Octubre-1
 
-**Diagnóstico**: [Aquí]().
+**Diagnóstico**: [Aquí](https://forms.gle/JjiJiW7EGn3TtAgX6).
 
 
 ### **EXAMEN DE EVALUACIÓN**.
-    Fecha limite: 2022-Diciembre-26
+    Fecha limite: 2022-Octubre-29
 
-**El de evaluación**: [Aquí]().
+**El de evaluación**: [Aquí](https://google.co.jp).
 
 **AVISO**: El *copy and paste* a lo rudo no se permite, es decir, no nada más copien y peguen lo primero que encuentrén en internet. Si es que veo que así, no tendrán derecho a calificación en este curso. Es decir, no estoy encontra que las busquen, pero por lo menos cambien al menos las palabras por algo que entiendan. Si tienen dudas con las preguntas en cómo están redactadas, pregunten.
 
@@ -105,12 +105,8 @@ Los **REPORTES** son **individuales** y seguirán el formato que platicó en las
 |3|Gerardo Daniel Gacia Cerda|
 |4|Ian Yael Leon Gallardo|
 |5|Ulices Castro Rodriguez|
-|6|Adrián Cortez Mendoza|
-|7|Iván Fernández Cano|
-|8|Emilio Cristóbal Jiménez Treviño|
-|9|Pedro Eduardo Olivera Parias|
-|10|Alejandro Mendieta Macias|
-|11|Brayan Tellez Cruz|
+|6|Emilio Cristóbal Jiménez Treviño|
+|7|Brayan Tellez Cruz|
 ## Proyecto Final.
 
 Realizar una lista doblemente ligada que tenga como objetivo almacenar el tipo de dato *Alumno*, el cuál cuenta con los siguientes campos: **Nombre**, **Número de cuenta** y **edad**. Además de las formas vistas para elimnar un nodo, se debe implementar una extra que consiste en el que el usuario escoja el nodo a eliminar. Para ello, el programa deber ir mostrando cada nodo con las opciones de "ver nodo siguiente" y "ver nodo anterior", presentando la información de cada nodo. Cuando el usuario encuentre el nodo que quiere eliinar debe tener la opción de "Eliminar este nodo" y salir al menú principal.
@@ -126,20 +122,24 @@ Realizar una lista doblemente ligada que tenga como objetivo almacenar el tipo d
 
 Esto sería un ejemplo del menú y lo que se tiene que hacer.
 
+    Fecha limite: 2022-Noviembre-05
+
 ## Reporte. 📗
 1. Investigar las aplicaciones de las estructuras de datos en la vida real y da por lo menos 5 ejemplos.
 
 El reporte tiene que estar escrito en *markdown*.
 
+    Fecha limite: 2022-Noviembre-05
+
+
 ## Tarea. 📕
 1. Investigar cómo se hace un **Queue** y sus operaciones correspondinetes en C++. Hacer un ejemplo completo.
 2. Crear una lista ligada simple de **nombres** en C++.
 
-
 ![](img/ejemplo_0.png)
 
-> Máximo para las entregas.
+> Máximo para las entregas junto con el proyecto.
 
-    Fecha limite de entregas: 2022-Diciembre-26
+    Fecha limite de entregas: 2022-Noviembre-05
 
 ![](img/C-anime.png)
