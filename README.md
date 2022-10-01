@@ -133,7 +133,7 @@ El reporte tiene que estar escrito en *markdown*.
 
 
 ## Tarea. 📕
-1. Investigar cómo se hace un **Queue** y sus operaciones correspondinetes en C++. Hacer un ejemplo completo.
+1. Investigar cómo se hace un **Queue** y sus operaciones correspondientes  en C++. Hacer un ejemplo completo.
 2. Crear una lista ligada simple de **nombres** en C++.
 
 ![](img/ejemplo_0.png)
