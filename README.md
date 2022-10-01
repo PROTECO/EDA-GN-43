@@ -124,6 +124,8 @@ Esto sería un ejemplo del menú y lo que se tiene que hacer.
 
     Fecha limite: 2022-Noviembre-05
 
+![](img/ejemplo_0.png)
+
 ## Reporte. 📗
 1. Investigar las aplicaciones de las estructuras de datos en la vida real y da por lo menos 5 ejemplos.
 
@@ -136,7 +138,7 @@ El reporte tiene que estar escrito en *markdown*.
 1. Investigar cómo se hace un **Queue** y sus operaciones correspondientes  en C++. Hacer un ejemplo completo.
 2. Crear una lista ligada simple de **nombres** en C++.
 
-![](img/ejemplo_0.png)
+
 
 > Máximo para las entregas junto con el proyecto.
 
