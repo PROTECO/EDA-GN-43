@@ -109,7 +109,7 @@ Los **REPORTES** son **individuales** y seguirán el formato que platicó en las
 |7|Brayan Tellez Cruz|
 ## Proyecto Final.
 
-Realizar una lista doblemente ligada que tenga como objetivo almacenar el tipo de dato *Alumno*, el cuál cuenta con los siguientes campos: **Nombre**, **Número de cuenta** y **edad**. Además de las formas vistas para elimnar un nodo, se debe implementar una extra que consiste en el que el usuario escoja el nodo a eliminar. Para ello, el programa deber ir mostrando cada nodo con las opciones de "ver nodo siguiente" y "ver nodo anterior", presentando la información de cada nodo. Cuando el usuario encuentre el nodo que quiere eliinar debe tener la opción de "Eliminar este nodo" y salir al menú principal.
+Realizar una lista doblemente ligada que tenga como objetivo almacenar el tipo de dato *Alumno*, el cuál cuenta con los siguientes campos: **Nombre**, **Número de cuenta** y **edad**. Además de las formas vistas para eliminar un nodo, se debe implementar una extra que consiste en el que el usuario escoja el nodo a eliminar. Para ello, el programa deber ir mostrando cada nodo con las opciones de "ver nodo siguiente" y "ver nodo anterior", presentando la información de cada nodo. Cuando el usuario encuentre el nodo que quiere aliminar debe tener la opción de "Eliminar este nodo" y salir al menú principal.
 
 
 ### Evaluación.
