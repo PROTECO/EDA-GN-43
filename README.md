@@ -54,13 +54,13 @@ Si da tiempo.
 |Reporte-Investigación|15%|
 
 ### **EXAMEN DIAGNÓSTICO**.
-    Fecha limite: 2022-Octubre-1
+    Fecha limite: 2022-Octubre-8
 
 **Diagnóstico**: [Aquí](https://forms.gle/JjiJiW7EGn3TtAgX6).
 
 
 ### **EXAMEN DE EVALUACIÓN**.
-    Fecha limite: 2022-Octubre-29
+    Fecha limite: 2022-Noviembre-05
 
 **El de evaluación**: [Aquí](https://google.co.jp).
 
@@ -123,7 +123,7 @@ Realizar una lista doblemente ligada que tenga como objetivo almacenar el tipo d
 
 Esto sería un ejemplo del menú y lo que se tiene que hacer.
 
-    Fecha limite: 2022-Noviembre-05
+    Fecha limite: 2022-Noviembre-12
 
 ![](img/ejemplo_0.png)
 
@@ -132,7 +132,7 @@ Esto sería un ejemplo del menú y lo que se tiene que hacer.
 
 El reporte tiene que estar escrito en *markdown*.
 
-    Fecha limite: 2022-Noviembre-05
+    Fecha limite: 2022-Noviembre-12
 
 
 ## Tarea. 📕
@@ -143,6 +143,6 @@ El reporte tiene que estar escrito en *markdown*.
 
 > Máximo para las entregas junto con el proyecto.
 
-    Fecha limite de entregas: 2022-Noviembre-05
+    Fecha limite de entregas: 2022-Noviembre-12
 
 ![](img/C-anime.png)
