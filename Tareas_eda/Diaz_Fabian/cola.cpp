@@ -17,8 +17,10 @@ using namespace std;
 // Estructura, Definition of the Queue
 
 struct Nodo{
+	
     int data;
     Nodo *next;
+    
 };
 
 // Nodos totales
@@ -85,6 +87,10 @@ int main(){
         }
 
     }
+    
+    // liberamos memoria de los nodos de front y de back
+    delete front;
+    delete back;
 
 	cout<<"\n\nbye bye";
     return 0;
@@ -183,6 +189,9 @@ void display(Nodo *&front, Nodo *&back){
         }
         
         cout<<"\n"<<endl;
+        
+        // Eliminamos el Nodo auxiliar
+        delete aux; 
         
     }
 	
