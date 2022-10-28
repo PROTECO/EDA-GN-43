@@ -35,6 +35,8 @@ class List{
 		void addNodo(int); // Agregar un Nodo
 		void deleteNodo(int); // Borrar un nodo
 		bool isEmpty(); // Comprobar si esta vacia
+		void searchNodo(int); // Buscar un nodo
+		void displayList(); // Imprimir elementos de la lista
 	
 };
 
@@ -108,7 +110,24 @@ void List::deleteNodo(int d){
 	}
 	else{ // Si la lista tiene nodos
 		
-		Nodo *actual = _first; // Creamos un nodo actual y le asignamos el primer nodo
+		Nodo *actual = _first; // Creamos nodo actual y le asignamos el primer nodo
+		
+		while(actual->next != NULL){ // Mientras el nodo actual no apunte a null
+			
+			if(actual->data == d){
+				
+				cout<<"\n\nElement "<<actual->data<<" exist.\n"<<endl;
+				break;
+				
+			}
+			
+			actual = actual->next; // Asignamos a actual el nodo siguiente
+			
+			
+		}
+		
+		// Si no se encontro el dato
+		cout<<"\n\nNo match found\n"<<endl;
 		
 	}
 	
@@ -126,6 +145,54 @@ bool List::isEmpty(){
 	else{ // Si el primer nodo tiene contenido
 		
 		return false; // Retornamos falso (Lista con al menos un nodo)
+		
+	}
+	
+}
+
+// Metodo para encontrar un elemento
+
+void List::searchNodo(int d){
+	
+	if(this->isEmpty()){ // Si la lista esta vacia
+		
+		cout<<"\n\nThere's not Nodos\n"<<endl;
+		
+	}
+	else{ // Si la lista tiene nodos
+		
+		Nodo *actual = _first; // Creamos nodo actual y le asignamos el primer nodo
+		
+		bool seg = true; // variable de seguir
+		
+		while(true){ // while infinito
+			
+			if(actual->data == d){ // si el dato del nodo actual es igual al numero dado
+				
+				cout<<"\n\nElement "<<actual->data<<" exist.\n"<<endl; // imprimimos que existe
+				return; // retornamos
+				
+			}
+			
+			actual = actual->next; // Asignamos a actual el nodo siguiente
+			// Una vez asignado el nuevo nodo
+			if(actual->next == NULL){ // si siguiente apunta a null (o sea que es el ultimo nodo)
+				
+				seg = false; // ponemos seguir en falso
+				continue; // forzamos la siguiente iteracion (ultimo nodo)
+				
+				if (seg == false){ // ya que se paso el ultimo nodo
+					
+					break; // cortamos el while
+					
+				}
+				
+			}
+			
+		}
+ 		
+		// Si llega aqui es porque no hubo coincidencias
+		cout<<"\n\nNo match found\n"<<endl;
 		
 	}
 	
@@ -173,6 +240,9 @@ int main(){
 				break;
 				
 			case 4: // Case de buscar un elemento
+				cout<<"\n\nEnter the element to search: ";
+				cin>>d; // leemos el dato a buscar
+				lista.searchNodo(d);				
 				break;
 				
 			case 5: // Case de imprimir los elementos
