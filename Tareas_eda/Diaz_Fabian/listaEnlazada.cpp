@@ -110,23 +110,67 @@ void List::deleteNodo(int d){
 	}
 	else{ // Si la lista tiene nodos
 		
-		Nodo *actual = _first; // Creamos nodo actual y le asignamos el primer nodo
+		Nodo *anterior = _first; // asignamos a nodo anterior el primer nodo
 		
-		while(actual->next != NULL){ // Mientras el nodo actual no apunte a null
+		if(anterior->data == d){ // En caso de que el primer valor sea el que deseamos eliminar
 			
-			if(actual->data == d){
+			if(anterior->next == NULL){ // Si solo hay un nodo
 				
-				cout<<"\n\nElement "<<actual->data<<" exist.\n"<<endl;
-				break;
+				_first = NULL; // Borramos el unico nodo
+				
+			}
+			else{ // Si hay mas de un nodo
+				
+				_first = anterior->next; // Volvemos el primer nodo al nodo siguiente
+				
+				delete anterior; // liberamos la memoria
+				
+				return; // Retornamos
 				
 			}
 			
-			actual = actual->next; // Asignamos a actual el nodo siguiente
-			
-			
 		}
 		
-		// Si no se encontro el dato
+		// En caso de ser mas de un nodo y el primer no ser el nodo a eliminar
+		
+		Nodo *actual = anterior->next; // nodo actual al siguiente del primero
+		
+		bool seg = true; // variable de seguir
+		
+		while(true){ // while infinito
+			
+			if(actual->data == d){ // si el dato del nodo actual es igual al numero dado
+				
+				anterior->next = actual->next; // asignamos la direccion del siguiente nodo al nodo anterior
+				actual = NULL; // asignamos null
+				return; // retornamos
+				
+			}
+			
+			anterior = actual; // le asignamos a anterior el nodo actual
+			actual = actual->next; // Asignamos a actual el nodo siguiente
+			
+			// Una vez asignado el nuevo nodo
+			if(actual->next == NULL){ // si siguiente apunta a null (o sea que es el ultimo nodo)
+				
+				if (seg == true){ // Para llegar al ultimo nodo
+					
+					seg = false; // ponemos seguir en falso
+					continue; // forzamos la siguiente iteracion (ultimo nodo)
+					
+				}
+				
+				if (seg == false){ // ya que se paso el ultimo nodo
+					
+					break; // cortamos el while
+					
+				}
+				
+			}
+			
+		}
+ 		
+		// Si llega aqui es porque no hubo coincidencias
 		cout<<"\n\nNo match found\n"<<endl;
 		
 	}
@@ -178,8 +222,12 @@ void List::searchNodo(int d){
 			// Una vez asignado el nuevo nodo
 			if(actual->next == NULL){ // si siguiente apunta a null (o sea que es el ultimo nodo)
 				
-				seg = false; // ponemos seguir en falso
-				continue; // forzamos la siguiente iteracion (ultimo nodo)
+				if (seg == true){ // Para llegar al ultimo nodo
+					
+					seg = false; // ponemos seguir en falso
+					continue; // forzamos la siguiente iteracion (ultimo nodo)
+					
+				}
 				
 				if (seg == false){ // ya que se paso el ultimo nodo
 					
@@ -228,6 +276,9 @@ int main(){
 				break;
 			
 			case 2: // case de eliminar elemento
+				cout<<"\n\nEnter the element to delete: ";
+				cin>>d; // leemos el dato a eleminar
+				lista.deleteNodo(d);
 				break;
 				
 			case 3: // Case de comprobar si esta vacia la lista
