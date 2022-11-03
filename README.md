@@ -62,7 +62,7 @@ Si da tiempo.
 ### **EXAMEN DE EVALUACIÓN**.
     Fecha limite: 2022-Noviembre-05
 
-**El de evaluación**: [Aquí](https://google.co.jp).
+**El de evaluación**: [Aquí](https://forms.gle/mjw6JFft1DN889nN7).
 
 **AVISO**: El *copy and paste* a lo rudo no se permite, es decir, no nada más copien y peguen lo primero que encuentrén en internet. Si es que veo que así, no tendrán derecho a calificación en este curso. Es decir, no estoy encontra que las busquen, pero por lo menos cambien al menos las palabras por algo que entiendan. Si tienen dudas con las preguntas en cómo están redactadas, pregunten.
 
