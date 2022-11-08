@@ -35,14 +35,15 @@ typedef struct Queue{ // Estructura de la Cola
 }Queue;
 
 // Funciones
-Nodo * getAlumno(char *, char *, int); // Funcion que genera un alumno
+Alumno * getAlumno(char *, char *, int); // Funcion que genera un alumno
 Nodo * getNodo(Alumno *, Nodo *); // Funcion que genera un nodo
 Queue * getQueue(); // Funcion que genera la cola
-void enqueue(Queue *, int); // Funcion que encola un nodo
-int dequeue(Queue *); // Funcion que desencola un nodo
-int selectDequeue(Queue *); // Funcion que desencola un nodo elegido
-int isEmpty(Queue *); // Comprueba si esta vacia la cola
-int peek(Queue *); // Toma el primer nodo de la cola
-void displayQueue(Queue *); // Imprime la cola
+void encolarAlumno(Queue *, char *, char *, int); // Funcion que encola un nodo
+int desencolarAlumno(Queue *); // Funcion que desencola un nodo
+void imprimirCola(Queue *); // Imprime la cola
+void recorrerCola(Queue *); // Recorre la cola y tiene la opcion de desencolar
+int estaVacia(Queue *); // Comprueba si esta vacia la cola
+int limpiarCola(Queue *); // Limpia la cola
+int buscarAlumno(Queue *); // Busca un Alumno en la cola
 
 #endif
