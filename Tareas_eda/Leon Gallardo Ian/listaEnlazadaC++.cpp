@@ -102,4 +102,5 @@ int main()
 			default: cout<<"opcion no valida\n"; break;
 		}
 	}while(op!=4);
+	return 0;
 }
