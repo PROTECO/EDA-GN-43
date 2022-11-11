@@ -20,7 +20,7 @@ typedef struct Alumno{ // Estructura Alumno
 
 typedef struct Nodo{ // Estructura de los Nodos
 	
-	Alumno * alumno; // Alumno
+	struct Alumno * alumno; // Alumno
 	struct Nodo * next; // siguiente
 	struct Nodo * prev; // anterior
 	
