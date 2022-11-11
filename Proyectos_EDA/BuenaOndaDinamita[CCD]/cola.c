@@ -352,5 +352,50 @@ int desencolarAlumno(Queue *); // Funcion que desencola un nodo
 void imprimirCola(Queue *); // Imprime la cola
 void recorrerCola(Queue *); // Recorre la cola y tiene la opcion de desencolar
 int estaVacia(Queue *); // Comprueba si esta vacia la cola
-int limpiarCola(Queue *); // Limpia la cola
+
+// Limpia la cola
+int limpiarCola(Queue * ref){
+	
+	if (estaVacia(ref) == 1){
+		
+		// Retornamos falso si no tiene nodos
+        return 0;
+        
+    }
+    else{ 
+		
+		// Creamos un nodo que apunte a la cabeza
+		Nodo * nodo = ref->cabeza;
+		
+		while(nodo != NULL){
+			
+			if(nodo->next == NULL){ // si no hay siguiente nodo
+				
+				// Eliminamos el nodo
+				nodo = NULL;
+				
+			}
+			else{ // Si hay siguiente nodo
+				
+				// asignamos nodo al nodo siguiente
+				nodo = nodo->next;
+				// eliminamos el nodo anterior
+				nodo = NULL;
+				
+			}
+			
+		}
+		
+		// Reasignamos null a cabeza cola y 0 a tamanio
+		ref->cabeza = NULL;
+		ref->cola = NULL;
+		ref->tamanio = 0;
+		
+		// Retornamos verdadero
+        return 1;
+
+    }
+	
+}
+
 int buscarAlumno(Queue *); // Busca un Alumno en la cola
