@@ -18,15 +18,15 @@
 Alumno * getAlumno(char * nombre, char * num_cuenta, int edad){
 	
 	// Crea el Alumno
-	Alumno * ref = (Alumno * ) malloc(sizeof(Alumno));
+	Alumno * alumno = (Alumno * ) malloc(sizeof(Alumno));
 	
 	// Asignamos nombre, num cuenta y edad
-	ref->nombre = nombre;
-    ref->num_cuenta = num_cuenta;
-    ref->edad = edad;
+	sprintf(alumno->nombre, "%s", nombre);
+    sprintf(alumno->num_cuenta, "%s", num_cuenta);
+    alumno->edad = edad;
 	
 	// Retornamos el Alumno creado
-	return ref;
+	return alumno;
 }
 
 // Funcion que genera un nodo
@@ -54,6 +54,7 @@ Queue * getQueue(){
     // asignamos Null al nodo cabeza (primer nodo) y al nodo cola (ultimo nodo)
     ref->cabeza = NULL;
     ref->cola = NULL;
+    ref->tamanio = 0;
     
     // retornamos
     return ref;
