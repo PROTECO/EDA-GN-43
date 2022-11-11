@@ -398,4 +398,40 @@ int limpiarCola(Queue * ref){
 	
 }
 
-int buscarAlumno(Queue *); // Busca un Alumno en la cola
+// Busca un Alumno en la cola
+int buscarAlumno(Queue * ref){
+	
+	if (estaVacia(ref) == 1){
+		
+		// Retornamos 0 si no tiene nodos
+        return 0;
+        
+    }
+    else{ 
+
+		char nom[30];
+		printf("\n\nIngrese el nombre a buscar: ");
+		gets(nom);
+		
+		Nodo * nodo = ref->cabeza;
+		
+		while(nodo != NULL){
+			
+			// Si nombre buscado es igual al nombre
+			if(strcmp(nodo->alumno->nombre, nom) == 0){
+				
+				// Retornamos 1 de que si se encontro el nombre
+				return 1;
+				
+			}
+			
+			// Asignamos el siguiente nodo
+			nodo = nodo->next;
+		}
+		
+		// Retornamos 2 de que no se encontro el nombre
+        return 2;
+
+    }
+	
+}
