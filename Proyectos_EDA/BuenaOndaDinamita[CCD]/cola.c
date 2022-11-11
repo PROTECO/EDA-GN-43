@@ -15,7 +15,7 @@
 // Funciones
 
 // Funcion que genera un alumno
-Alumno * getAlumno(char * nombre, char * num_cuenta, int edad){
+Alumno * getAlumno(char nombre[], char num_cuenta[], int edad){
 	
 	// Crea el Alumno
 	Alumno * alumno = (Alumno * ) malloc(sizeof(Alumno));
