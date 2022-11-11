@@ -173,7 +173,161 @@ void imprimirCola(Queue * ref){
 	
 }
 
-void recorrerCola(Queue *); // Recorre la cola y tiene la opcion de desencolar
+// Recorre la cola y tiene la opcion de desencolar
+void recorrerCola(Queue * ref){
+	
+	if (estaVacia(ref) == 1){
+    	
+    	// Retornamos (No se puede imprimir si no hay nodos)
+    	printf("\n\nNo hay alumnos que imprimir.\n");
+        return;
+        
+    }
+	
+	// Declaramos numero de alumno actual y opcion (para el switch case)
+	int num=1;
+	int opc=0;
+	
+	// Asignamos la cabeza a un nodo cabeza
+    Nodo * nodo = ref->cabeza;
+    
+    printf("\n\n");
+    
+    // Ciclo iterativo mientras el nodo actual no sea nulo
+    while (nodo != NULL){
+    	
+    	// Imprimimos al alumno
+    	printf("\t---------------------------\n");
+    	printf("\tAlumno: %d", num);
+		printf("\n\tNombre: %s", nodo->alumno->nombre);
+    	printf("\n\tNumero de cuenta: %s", nodo->alumno->num_cuenta);
+        printf("\n\tEdad: %d", nodo->alumno->edad);
+    	printf("\n\t---------------------------\n\n");
+    	
+    	printf("1. Alumno Anterior \t 2. Borrar Alumno \t 3. Siguiente Alumno \t 4. Salir");
+    	printf("\n\nSeleccione una opcion: ");
+    	
+		// Leemos opcion
+		scanf("%d", &opc);
+    	getchar();
+    	
+    	switch(opc){
+    		
+    		case 1: // Case de ir al Alumno anterior
+    			// En caso de ser el primer alumno (cabeza)
+				if(num == 1){
+    				
+    				printf("\n\nNo hay alumno interior, intente otra opcion.\n");
+    				// Para ir directo a la siguiente iteracion
+					continue;
+    				
+    			}
+				else{ // En caso de no ser el primer alumno
+					
+					// Asignamos al nodo el nodo anterior y bajamos uno en la cuenta de alumno
+					nodo = nodo->next;
+					num--;
+    				
+    			}
+    			
+    			break;
+    			
+    		case 2: // Case de borrar al Alumno actual
+			        
+			    // Si la cabeza y la cola son el mismo nodo
+			    if (ref->cabeza == ref->cola){
+			     	
+			    	// Borramos el unico nodo
+			    	ref->cola = NULL;
+			    	ref->cabeza = NULL;
+			    	
+			    	// Disminuimos el tamanio de la cola
+			    	ref->tamanio--;
+						
+			    	printf("\n\nYa no hay alumnos unu\n");
+			    	
+			    	return; // Salimos de la funcion
+			        
+			    }
+				else{ // Si hay mas de un nodo
+					
+					if(ref->cabeza == nodo){
+											
+						// Asignamos a la cabeza el nodo siguiente de la cola y ponemos al puntero previo del siguiente nodo en nulo
+			        	ref->cabeza = ref->cabeza->next;
+			        	ref->cabeza->prev = NULL;
+			        
+			        	// Disminuimos el tamanio de la cola
+			    		ref->tamanio--;
+			    		
+			    		return; // Salimos de la funcion
+						
+					}
+					else if(ref->cola == nodo){
+						
+						// Asignamos a la cola el nodo previo de la cola y ponemos al puntero siguiente nodo en nulo
+			        	ref->cola = ref->cola->prev;
+			        	ref->cola->next = NULL;
+						
+						// Disminuimos el tamanio de la cola
+			    		ref->tamanio--;
+						
+						return; // Salimos de la funcion
+						
+					}
+					else{
+						
+						// 
+			        	nodo->next->prev = nodo->prev;
+			        	nodo->prev->next = nodo->next;
+						
+						// Disminuimos el tamanio de la cola
+			    		ref->tamanio--;
+						
+						return; // Salimos de la funcion
+						
+					}		
+			        
+			    }
+			    
+    			break;
+    			
+    		case 3: // Case de ir al Alumno siguiente
+    			// En caso de ser el ultimo alumno (cola)
+				if(ref->cola == nodo){
+    				
+    				printf("\n\nNo hay alumno siguiente, intente otra opcion.\n");
+    				
+    			}
+				else{ // En caso de no ser el ultimo alumno
+					
+					// Asignamos al nodo el nodo siguiente y bajamos uno en la cuenta de alumno
+					nodo = nodo->next;
+					num++;
+    				
+    			}
+    			break;
+    		
+    		case 4: // Caso de salir
+    			break;
+    		
+    		default: // Caso de cualquier otra respuesta	
+    			printf("\n\nIntente con una opcion valida.\n");
+				break;
+    		
+    	}
+		
+		if(opc == 4){ // Si se eligio la opcion salir
+			
+			break; // rompemos el while y salimos
+			
+		}
+		
+    }
+    
+    printf("\n\n");
+	
+}
 
 // Comprueba si esta vacia la cola
 int estaVacia(Queue * ref){
