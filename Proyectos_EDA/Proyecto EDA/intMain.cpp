@@ -43,29 +43,19 @@ int main()
 		
 		switch(op)
 		{
-			case 1: break;
-			case 2: break;
-			case 3: break;
-			case 4: break;
+			case 1: ingresarAlumno(); break;
+			case 2: eliminarAlumno(); break;
+			case 3: mostrarAlumnos(); break;
+			case 4: mostrarAlumnoXAlumno(); break;
 			case 5: vacia(); break;
 			case 6: vaciarLista(); break;
-			case 7: break;
+			case 7: buscarAlumno(); break;
 			case 8: cout<<"Adios\n"; break;
 			default: cout<<"Opcion no valida\n"; break;
 		}		
 		
 	}while(op!=8);
 	return 0;
-}
-
-void ingresarAlumno()
-{
-	
-}
-
-void eliminarAlumno()
-{
-	
 }
 
 void vacia()
@@ -177,3 +167,49 @@ void mostrarAlumnoXAlumno()
 	cout<<"\tLa lista de alumnos finalizo\n";
 }
 
+void eliminarAlumno()
+{
+	alumno *actual=new alumno();
+	actual=lista;
+	alumno *anterior=new alumno();
+	anterior=NULL;
+	
+	int nodoBuscado;
+	int B=0;
+	
+	cout<<("Ingresa el numero de cuenta: ");
+	cin>>nodoBuscado;
+	
+	do{
+		if(actual->numeroCuenta==nodoBuscado)
+		{
+			if(actual==lista)
+			{
+				lista=lista->sig;
+			}
+			else
+			{
+				anterior->sig=actual->sig;
+			}
+			B=1;
+		}	
+		anterior=actual;
+		actual=actual->sig;	
+	} while(actual!=NULL&&B==0);
+
+	if(B==1)
+	free(anterior);
+}
+
+void ingresarAlumno()
+{
+	alumno *nuevo=new alumno();
+	nuevo->sig=lista;
+	cout<<"Ingrese el nombre del alumno: ";
+	cin>>nuevo->nombre;
+	cout<<"Ingrese el numero de cuenta del alumno: ";
+	cin>>nuevo->numeroCuenta;
+	cout<<"Ingrese la edad del alumno: ";
+	cin>>nuevo->edadAlumno;
+	lista=nuevo;
+}
