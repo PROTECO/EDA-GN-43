@@ -43,8 +43,8 @@ int main()
 		
 		switch(op)
 		{
-			case 1: ingresarAlumno(); break;
-			case 2: eliminarAlumno(); break;
+			case 1: break;
+			case 2: break;
 			case 3: break;
 			case 4: break;
 			case 5: vacia(); break;
@@ -60,49 +60,12 @@ int main()
 
 void ingresarAlumno()
 {
-	alumno *nuevo=new alumno();
-	nuevo->sig=lista;
-	cout<<"Ingrese el nombre del alumno: ";
-	cin>>nuevo->nombre;
-	cout<<"Ingrese el numero de cuenta del alumno: ";
-	cin>>nuevo->numeroCuenta;
-	cout<<"Ingrese la edad del alumno: ";
-	cin>>nuevo->edadAlumno;
-	lista=nuevo;
+	
 }
 
 void eliminarAlumno()
 {
-	alumno *actual=new alumno();
-	actual=lista;
-	alumno *anterior=new alumno();
-	anterior=NULL;
 	
-	int nodoBuscado;
-	int B=0;
-	
-	cout<<("Ingresa el numero de cuenta: ");
-	cin>>nodoBuscado;
-	
-	do{
-		if(actual->numeroCuenta==nodoBuscado)
-		{
-			if(actual==lista)
-			{
-				lista=lista->sig;
-			}
-			else
-			{
-				anterior->sig=actual->sig;
-			}
-			B=1;
-		}	
-		anterior=actual;
-		actual=actual->sig;	
-	} while(actual!=NULL&&B==0);
-
-	if(B==1)
-	free(anterior);
 }
 
 void vacia()
@@ -170,6 +133,47 @@ void mostrarAlumnos()
 
 void mostrarAlumnoXAlumno()
 {
+	int op,x=0,y;
 	
+	alumno *actual=new alumno();
+	actual=lista;
+	alumno *anterior=new alumno();
+	anterior=actual;
+	anterior->ant=actual;
+	
+	while(actual!=NULL || op!=3)
+	{
+		if(x==0)
+		{
+			cout<<"\tNombre: "<<actual->nombre<<" | Numero de cuenta: "<<actual->numeroCuenta<<" | Edad: "<<actual->edadAlumno<<"\n";	
+		}
+		
+		else
+		{
+			cout<<"\t1. Mostrar al siguiente alumno  |  ";				
+			cout<<"\t2. Mostrar al anterior alumno  |  ";
+			cout<<"\t3. salir";
+			cout<<"\t\n-> ";
+			cin>>op;
+			if(x<2)
+			{
+				cout<<"\tEs el primer dato no hay anterior\n";
+			}
+			else if(op==1)
+			{
+				cout<<"\tNombre: "<<actual->nombre<<" | Numero de cuenta: "<<actual->numeroCuenta<<" | Edad: "<<actual->edadAlumno<<"\n";
+			}
+			else if(op==2)
+			{
+				cout<<"\tNombre: "<<anterior->nombre<<" | Numero de cuenta: "<<anterior->numeroCuenta<<" | Edad: "<<anterior->edadAlumno<<"\n";
+			}
+			else if(op==3)
+				break;
+		}
+		x++;
+		actual=actual->sig;
+		
+	}
+	cout<<"\tLa lista de alumnos finalizo\n";
 }
 
