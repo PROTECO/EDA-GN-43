@@ -132,7 +132,7 @@ int main(){
 
 		
 	}
-	free(lista)
+	free(lista);
 	
 	return 0;
 }
