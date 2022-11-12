@@ -1,7 +1,7 @@
 /*
 	Proyecto Final Curso Prebecario Estructura de Datos | PROTECO
 	
-	Cola Doblemente Enlazada
+	Lista Doblemente Enlazada
 	
 	Elaboraron:
 
@@ -96,7 +96,7 @@ int main(){
 				break;
 				
 			case 6: // Case de Limpiar la lista
-				if(limpiarCola(lista) == 0){
+				if(limpiarLista(lista) == 0){
 					
 					printf("\n\nLa Lista ya estaba vacia\n\n");
 					
