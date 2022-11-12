@@ -86,7 +86,36 @@ void vaciarLista()
 
 void buscarAlumno()
 {
+	alumno *actual=new alumno();
+	actual=lista;
 	
+	int nodoBuscado;
+	int B=0;
+	
+	cout<<("Ingresa el numero de cuenta: ");
+	cin>>nodoBuscado;
+	
+	if(lista!=NULL)
+	{
+		while(actual!=NULL && B==0)
+		{
+			if(actual->numeroCuenta==nodoBuscado)
+			{
+				cout<<"Nombre: "<<actual->nombre<<" | Numero de cuenta: "<<nodoBuscado<<" | Edad: "<<actual->edadAlumno<<"\n";
+				B=1;
+			}		
+			actual=actual->sig;
+		}
+		if(B==0)
+		{
+			cout<<"Dato no encontrado\n";
+		}
+	}
+	else
+	{
+		cout<<"La lista esta vacia, no hay datos para buscar\n";
+	}
+	free(actual);
 }
 
 void mostrarAlumnos()
