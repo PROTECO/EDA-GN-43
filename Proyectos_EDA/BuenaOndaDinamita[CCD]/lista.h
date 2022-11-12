@@ -38,7 +38,7 @@ typedef struct Lista{ // Estructura de la Lista
 Alumno * getAlumno(char [], char [], int); // Funcion que genera un alumno
 Nodo * getNodo(Alumno *, Nodo *); // Funcion que genera un nodo
 Lista * getLista(); // Funcion que genera la cola
-void encolarAlumno(Lista *, char [], char [], int); // Funcion que encola un nodo
+void enlistarAlumno(Lista *, char [], char [], int); // Funcion que encola un nodo
 int desenlistarAlumno(Lista *); // Funcion que desencola un nodo
 void imprimirLista(Lista *); // Imprime la lista
 void recorrerLista(Lista *); // Recorre la lista y tiene la opcion de desencolar
