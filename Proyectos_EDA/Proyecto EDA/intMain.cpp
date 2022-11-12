@@ -1,3 +1,27 @@
+#include<iostream>
+#include<stdlib.h>
+
+using namespace std;
+
+struct alumno
+{
+	char nombre[30];
+	int numeroCuenta;
+	int edadAlumno;
+	alumno *sig;
+	alumno *ant;
+};
+
+alumno *lista;
+
+void ingresarAlumno();
+void eliminarAlumno();
+void mostrarAlumnos();
+void mostrarAlumnoXAlumno();
+void vacia();
+void vaciarLista();
+void buscarAlumno();
+
 int main()
 {
 	int op;
@@ -36,15 +60,7 @@ int main()
 
 void ingresarAlumno()
 {
-	alumno *nuevo=new alumno();
-	nuevo->sig=lista;
-	cout<<"Ingrese el nombre del alumno: ";
-	cin>>nuevo->nombre;
-	cout<<"Ingrese el numero de cuenta del alumno: ";
-	cin>>nuevo->numeroCuenta;
-	cout<<"Ingrese la edad del alumno: ";
-	cin>>nuevo->edadAlumno;
-	lista=nuevo;
+	
 }
 
 void eliminarAlumno()
@@ -75,15 +91,7 @@ void buscarAlumno()
 
 void mostrarAlumnos()
 {
-	alumno *indice=new alumno();
-	indice=lista;
-	while(indice!=NULL)
-	{
-		cout<<"Nombre: "<<indice->nombre<<" | Numero de cuenta: "<<indice->numeroCuenta<<" | Edad: "<<indice->edadAlumno;
-		indice=indice->sig;
-		cout<<" \n";
-	}
-	free(indice);
+	
 }
 
 void mostrarAlumnoXAlumno()
