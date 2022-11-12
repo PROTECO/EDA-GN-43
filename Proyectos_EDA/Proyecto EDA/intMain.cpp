@@ -160,7 +160,6 @@ void mostrarAlumnoXAlumno()
 		actual=actual->sig;
 		
 	}
-	cout<<"\tLa lista de alumnos finalizo\n";
 }
 
 void eliminarAlumno()
