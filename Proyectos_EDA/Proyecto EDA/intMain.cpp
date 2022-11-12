@@ -91,7 +91,15 @@ void buscarAlumno()
 
 void mostrarAlumnos()
 {
-	
+	alumno *indice=new alumno();
+	indice=lista;
+	while(indice!=NULL)
+	{
+		cout<<"Nombre: "<<indice->nombre<<" | Numero de cuenta: "<<indice->numeroCuenta<<" | Edad: "<<indice->edadAlumno;
+		indice=indice->sig;
+		cout<<" \n";
+	}
+	free(indice);
 }
 
 void mostrarAlumnoXAlumno()
