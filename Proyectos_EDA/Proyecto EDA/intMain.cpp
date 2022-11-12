@@ -131,7 +131,7 @@ void mostrarAlumnoXAlumno()
 	anterior=actual;
 	anterior->ant=actual;
 	
-	while(actual!=NULL || op!=3)
+	while(actual!=NULL)
 	{
 		if(x==0)
 		{
@@ -145,11 +145,7 @@ void mostrarAlumnoXAlumno()
 			cout<<"\t3. salir";
 			cout<<"\t\n-> ";
 			cin>>op;
-			if(x<2)
-			{
-				cout<<"\tEs el primer dato no hay anterior\n";
-			}
-			else if(op==1)
+			if(op==1)
 			{
 				cout<<"\tNombre: "<<actual->nombre<<" | Numero de cuenta: "<<actual->numeroCuenta<<" | Edad: "<<actual->edadAlumno<<"\n";
 			}
