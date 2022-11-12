@@ -1,6 +1,6 @@
 /*
 
-	Archivo C del archivo de cabecera cola.h
+	Archivo C del archivo de cabecera lista.h
 	
 	Aqui se encuentran las funciones de las structs
 
@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdlib.h>
-#include "cola.h"
+#include "lista.h"
 
 // Funciones
 
@@ -45,11 +45,11 @@ Nodo * getNodo(Alumno * alumno, Nodo * prev){
 	
 }
 
-// Funcion que genera la cola
-Queue * getQueue(){
+// Funcion que genera la Lista
+Lista * getLista(){
 	
-	// Creamos la cola
-    Queue * ref = (Queue * ) malloc(sizeof(Queue));
+	// Creamos la Lista
+    Lista * ref = (Lista * ) malloc(sizeof(Lista));
     
     // asignamos Null al nodo cabeza (primer nodo) y al nodo cola (ultimo nodo)
     ref->cabeza = NULL;
@@ -62,7 +62,7 @@ Queue * getQueue(){
 }
 
 // Funcion que encola un nodo
-void encolarAlumno(Queue * ref, char nombre[], char num_cuenta[], int edad){
+void enlistarAlumno(Lista * ref, char nombre[], char num_cuenta[], int edad){
 	
 	// Creamos el alumno por medio de la funcion getAlumno
 	Alumno * alumno = getAlumno(nombre, num_cuenta, edad);
@@ -75,15 +75,15 @@ void encolarAlumno(Queue * ref, char nombre[], char num_cuenta[], int edad){
     	
     	// Hacemos la cabeza al nuevo nodo
         ref->cabeza = nodo;
-        // Aumentamos el tamanio de la cola
+        // Aumentamos el tamanio de la Lista
 		ref->tamanio++;
         
     }
     else{ // En caso de que ya existan nodos
     	
-    	// Asignamos el nuevo nodo al apuntador de siguiente de la cola de la cola
+    	// Asignamos el nuevo nodo al apuntador de siguiente de la cola
         ref->cola->next = nodo;
-        // Aumentamos el tamanio de la cola
+        // Aumentamos el tamanio de la Lista
         ref->tamanio = ref->tamanio + 1;
         
     }
@@ -94,16 +94,16 @@ void encolarAlumno(Queue * ref, char nombre[], char num_cuenta[], int edad){
 }
 
 // Funcion que desencola un nodo
-int desencolarAlumno(Queue * ref){
+int desenlistarAlumno(Lista * ref){
 	
-	// Si la cola esta vacia
+	// Si la Lista esta vacia
     if (estaVacia(ref) == 1){
     	
     	// Retornamos -1 (No se puede realizar la operacion sin nodos)
         return -1;
         
     }
-    else{ // En caso de que la cola tenga nodos
+    else{ // En caso de que la Lista tenga nodos
         
         // Asignamos la cabeza a un nodo auxiliar
         Nodo * aux = ref->cabeza;
@@ -117,14 +117,28 @@ int desencolarAlumno(Queue * ref){
             
         }
 		else{ // Si hay mas de un nodo
+		
+		// Si solo hay dos nodos
+           	if(ref->cola == ref->cabeza->next){
+            	
+            		// Asignamos null al nodo siguiente de cabeza
+			ref->cabeza->next = NULL;
+			// Asignamos cabeza a cola para que sean el mismo nodo
+			ref->cola = ref->cabeza;
+				
+            }
+            else{ // Si hay mas de dos nodos
+            	
+            	// Asignamos a cola el nodo previo
+            	ref->cola = ref->cola->prev;
+            	// Asignamos al siguiente nodo del nodo cola como nulo
+            	ref->cola->next = NULL;
+            	
+            }
 			
-			// Asignamos a la cabeza el nodo siguiente de la cola y ponemos al puntero previo del siguiente nodo en nulo
-            ref->cabeza = ref->cabeza->next;
-            ref->cabeza->prev = NULL;
-            
         }
         
-        // Disminuimos el tamanio de la cola
+        // Disminuimos el tamanio de la Lista
         ref->tamanio--;
         
         // Retornamos 1 (Se ha realizado la operacion)
@@ -134,8 +148,8 @@ int desencolarAlumno(Queue * ref){
 	
 }
 
-// Imprime la cola
-void imprimirCola(Queue * ref){
+// Imprime la Lista
+void imprimirLista(Lista * ref){
 	
 	if (estaVacia(ref) == 1){
     	
@@ -173,8 +187,8 @@ void imprimirCola(Queue * ref){
 	
 }
 
-// Recorre la cola y tiene la opcion de desencolar
-void recorrerCola(Queue * ref){
+// Recorre la Lista y tiene la opcion de desenlistar
+void recorrerLista(Lista * ref){
 	
 	if (estaVacia(ref) == 1){
     	
@@ -199,7 +213,7 @@ void recorrerCola(Queue * ref){
     	// Imprimimos al alumno
     	printf("\t---------------------------\n");
     	printf("\tAlumno: %d", num);
-		printf("\n\tNombre: %s", nodo->alumno->nombre);
+	printf("\n\tNombre: %s", nodo->alumno->nombre);
     	printf("\n\tNumero de cuenta: %s", nodo->alumno->num_cuenta);
         printf("\n\tEdad: %d", nodo->alumno->edad);
     	printf("\n\t---------------------------\n\n");
@@ -207,26 +221,26 @@ void recorrerCola(Queue * ref){
     	printf("1. Alumno Anterior \t 2. Borrar Alumno \t 3. Siguiente Alumno \t 4. Salir");
     	printf("\n\nSeleccione una opcion: ");
     	
-		// Leemos opcion
-		scanf("%d", &opc);
+	// Leemos opcion
+	scanf("%d", &opc);
     	getchar();
     	
     	switch(opc){
     		
     		case 1: // Case de ir al Alumno anterior
     			// En caso de ser el primer alumno (cabeza)
-				if(num == 1){
+			if(num == 1){
     				
     				printf("\n\nNo hay alumno interior, intente otra opcion.\n");
     				// Para ir directo a la siguiente iteracion
-					continue;
+				continue;
     				
     			}
-				else{ // En caso de no ser el primer alumno
+			else{ // En caso de no ser el primer alumno
 					
-					// Asignamos al nodo el nodo anterior y bajamos uno en la cuenta de alumno
-					nodo = nodo->next;
-					num--;
+				// Asignamos al nodo el nodo anterior y bajamos uno en la cuenta de alumno
+				nodo = nodo->next;
+				num--;
     				
     			}
     			
@@ -241,7 +255,7 @@ void recorrerCola(Queue * ref){
 			    	ref->cola = NULL;
 			    	ref->cabeza = NULL;
 			    	
-			    	// Disminuimos el tamanio de la cola
+			    	// Disminuimos el tamanio de la Lista
 			    	ref->tamanio--;
 						
 			    	printf("\n\nYa no hay alumnos unu\n");
@@ -253,24 +267,24 @@ void recorrerCola(Queue * ref){
 					
 					if(ref->cabeza == nodo){
 											
-						// Asignamos a la cabeza el nodo siguiente de la cola y ponemos al puntero previo del siguiente nodo en nulo
-			        	ref->cabeza = ref->cabeza->next;
-			        	ref->cabeza->prev = NULL;
+						// Asignamos a la cabeza el nodo siguiente de la Lista y ponemos al puntero previo del siguiente nodo en nulo
+			        		ref->cabeza = ref->cabeza->next;
+			        		ref->cabeza->prev = NULL;
 			        
-			        	// Disminuimos el tamanio de la cola
-			    		ref->tamanio--;
+			        		// Disminuimos el tamanio de la Lista
+			    			ref->tamanio--;
 			    		
-			    		return; // Salimos de la funcion
+			    			return; // Salimos de la funcion
 						
 					}
 					else if(ref->cola == nodo){
 						
-						// Asignamos a la cola el nodo previo de la cola y ponemos al puntero siguiente nodo en nulo
-			        	ref->cola = ref->cola->prev;
-			        	ref->cola->next = NULL;
+						// Asignamos a la cola el nodo previo de la Lista y ponemos al puntero siguiente nodo en nulo
+			        		ref->cola = ref->cola->prev;
+			        		ref->cola->next = NULL;
 						
-						// Disminuimos el tamanio de la cola
-			    		ref->tamanio--;
+						// Disminuimos el tamanio de la Lista
+			    			ref->tamanio--;
 						
 						return; // Salimos de la funcion
 						
@@ -278,28 +292,28 @@ void recorrerCola(Queue * ref){
 					else{
 						
 						// 
-			        	nodo->next->prev = nodo->prev;
-			        	nodo->prev->next = nodo->next;
+			        		nodo->next->prev = nodo->prev;
+			        		nodo->prev->next = nodo->next;
 						
-						// Disminuimos el tamanio de la cola
-			    		ref->tamanio--;
+						// Disminuimos el tamanio de la Lista
+			    			ref->tamanio--;
 						
 						return; // Salimos de la funcion
 						
 					}		
 			        
-			    }
+			   	}
 			    
-    			break;
+    				break;
     			
     		case 3: // Case de ir al Alumno siguiente
-    			// En caso de ser el ultimo alumno (cola)
-				if(ref->cola == nodo){
+    			// En caso de ser el ultimo alumno (Lista)
+			if(ref->cola == nodo){
     				
     				printf("\n\nNo hay alumno siguiente, intente otra opcion.\n");
     				
     			}
-				else{ // En caso de no ser el ultimo alumno
+			else{ // En caso de no ser el ultimo alumno
 					
 					// Asignamos al nodo el nodo siguiente y bajamos uno en la cuenta de alumno
 					nodo = nodo->next;
@@ -317,11 +331,11 @@ void recorrerCola(Queue * ref){
     		
     	}
 		
-		if(opc == 4){ // Si se eligio la opcion salir
+	if(opc == 4){ // Si se eligio la opcion salir
 			
-			break; // rompemos el while y salimos
+		break; // rompemos el while y salimos
 			
-		}
+	}
 		
     }
     
@@ -330,35 +344,28 @@ void recorrerCola(Queue * ref){
 }
 
 // Comprueba si esta vacia la cola
-int estaVacia(Queue * ref){
+int estaVacia(Lista * ref){
 	
 	if (ref->tamanio == 0){
 		
-		// Retornamos verdadero si no tiene nodos
+	// Retornamos verdadero si no tiene nodos
         return 1;
         
     }
     else{ 
 
-		// Retornamos falso si tiene nodos
+	// Retornamos falso si tiene nodos
         return 0;
 
     }
 }
 
-
-void encolarAlumno(Queue *, char *, char *, int); // Funcion que encola un nodo
-int desencolarAlumno(Queue *); // Funcion que desencola un nodo
-void imprimirCola(Queue *); // Imprime la cola
-void recorrerCola(Queue *); // Recorre la cola y tiene la opcion de desencolar
-int estaVacia(Queue *); // Comprueba si esta vacia la cola
-
 // Limpia la cola
-int limpiarCola(Queue * ref){
+int limpiarLista(Lista * ref){
 	
 	if (estaVacia(ref) == 1){
 		
-		// Retornamos falso si no tiene nodos
+	// Retornamos falso si no tiene nodos
         return 0;
         
     }
@@ -399,7 +406,7 @@ int limpiarCola(Queue * ref){
 }
 
 // Busca un Alumno en la cola
-int buscarAlumno(Queue * ref){
+int buscarAlumno(Lista * ref){
 	
 	if (estaVacia(ref) == 1){
 		
