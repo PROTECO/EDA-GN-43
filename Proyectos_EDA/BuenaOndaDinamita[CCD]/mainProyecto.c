@@ -17,7 +17,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "cola.h"
+#include "lista.h"
 
 // Prototipos
 void menu();
@@ -26,7 +26,7 @@ void menu();
 int main(){
 	
 	int opc = 0; // Opcion, para las elecciones en el switch
-	Queue * queue = getQueue(); // Declaramos la cola
+	Lista * lista = getLista(); // Declaramos la lista
 	
 	// Elemento a leer del alumno
 	char nombre[30];
@@ -54,12 +54,12 @@ int main(){
 				printf("\nDigite la edad: ");
 				scanf("%d",&edad);
 				getchar();
-				encolarAlumno(queue, nombre, num_cuenta, edad);
+				enlistarAlumno(lista, nombre, num_cuenta, edad);
 				break;
 			
 			case 2: // Case de Eliminar Alumno
 				
-				if(desencolarAlumno(queue) == -1){
+				if(desenlistarAlumno(lista) == -1){
 					
 					printf("\nNo hay Alumnos para borrar\n\n");
 					
@@ -71,52 +71,52 @@ int main(){
 				}
 				break;
 				
-			case 3: // Case para Imprimir toda la cola
+			case 3: // Case para Imprimir toda la lista
 				
-				imprimirCola(queue);
+				imprimirLista(lista);
 				break;
 				
 			case 4: // Case para Mostrar Alumno por Alumno
 				
-				recorrerCola(queue);
+				recorrerLista(lista);
 				break;
 				
-			case 5: // Case de indicar si esta vacia la cola
+			case 5: // Case de indicar si esta vacia la lista
 				
-				if(estaVacia(queue) == 1){
+				if(estaVacia(lista) == 1){
 					
-					printf("\n\nCola Vacia\n\n");
+					printf("\n\nLista Vacia\n\n");
 					
 				}
 				else{
 					
-					printf("\n\nExisten Alumnos en la Cola\n\n");
+					printf("\n\nExisten Alumnos en la Lista\n\n");
 					
 				}
 				break;
 				
 			case 6: // Case de Limpiar la lista
-				if(limpiarCola(queue) == 0){
+				if(limpiarCola(lista) == 0){
 					
-					printf("\n\nLa Cola ya estaba vacia\n\n");
+					printf("\n\nLa Lista ya estaba vacia\n\n");
 					
 				}
 				else{
 					
-					printf("\n\nCola limpiada\n\n");
+					printf("\n\nLista limpiada\n\n");
 					
 				}
 				break;
 			
-			case 7: // Case de ver si un Alumno esta en la cola
-				if(buscarAlumno(queue) == 1){
+			case 7: // Case de ver si un Alumno esta en la lista
+				if(buscarAlumno(lista) == 1){
 					
-					printf("\n\nEl Alumno se encuentra dentro de la cola\n");
+					printf("\n\nEl Alumno se encuentra dentro de la lista\n");
 					
 				}
 				else{
 					
-					printf("\n\nNo se encontro el Alumno o no hay Alumnos en la cola\n");
+					printf("\n\nNo se encontro el Alumno o no hay Alumnos en la lista\n");
 					
 				}
 				break;
@@ -132,6 +132,7 @@ int main(){
 
 		
 	}
+	free(lista)
 	
 	return 0;
 }
