@@ -33,3 +33,34 @@ int main()
 	}while(op!=8);
 	return 0;
 }
+
+void ingresarAlumno()
+{
+	
+}
+
+void eliminarAlumno()
+{
+	
+}
+
+void vaciarLista()
+{
+	
+}
+
+void buscarAlumno()
+{
+	
+}
+
+void mostrarAlumnos()
+{
+	
+}
+
+void mostrarAlumnoXAlumno()
+{
+	
+}
+
