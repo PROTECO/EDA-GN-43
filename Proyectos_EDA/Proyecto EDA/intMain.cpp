@@ -19,12 +19,12 @@ int main()
 		
 		switch(op)
 		{
-			case 1: ingresarAlumno(); break;
+			case 1: break;
 			case 2: break;
 			case 3: break;
 			case 4: break;
-			case 5: break;
-			case 6: break;
+			case 5: vacia(); break;
+			case 6: vaciarLista(); break;
 			case 7: break;
 			case 8: cout<<"Adios\n"; break;
 			default: cout<<"Opcion no valida\n"; break;
@@ -36,15 +36,7 @@ int main()
 
 void ingresarAlumno()
 {
-	alumno *nuevo=new alumno();
-	nuevo->sig=lista;
-	cout<<"Ingrese el nombre del alumno: ";
-	cin>>nuevo->nombre;
-	cout<<"Ingrese el numero de cuenta del alumno: ";
-	cin>>nuevo->numeroCuenta;
-	cout<<"Ingrese la edad del alumno: ";
-	cin>>nuevo->edadAlumno;
-	lista=nuevo;
+	
 }
 
 void eliminarAlumno()
@@ -52,9 +44,20 @@ void eliminarAlumno()
 	
 }
 
+void vacia()
+{
+	if(lista==NULL)
+	{
+		cout<<"La lista esta vacia\n";
+	}
+	else
+		cout<<"Negativo, ya hay datos en la lista\n";
+}
+
 void vaciarLista()
 {
-	
+	lista=NULL;
+	free(lista);
 }
 
 void buscarAlumno()
