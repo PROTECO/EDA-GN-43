@@ -1,3 +1,7 @@
+- Leon Gallardo Ian Yael
+- Gerardo Daniel García Cerda
+
+
 #include<iostream>
 #include<stdlib.h>
 
