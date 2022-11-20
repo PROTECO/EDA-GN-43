@@ -124,7 +124,7 @@ en el cual dejaré esta pequeña tabla que conseguí de [Wikipedia](https://en.w
 |8|Pedro Eduardo Olivera Parias|4|24|25|10|63|可|
 |9|Iván Fernández Cano|-|-|12|-|12|不可|
 
-Para aprobar el curso tiene que ser una calificación $n\geq6$ donde **n** es la calificación obtenida.
+Para aprobar el curso tiene que ser una calificación **$n\geq60$** donde **$n$** es la calificación obtenida.
 
 ## Proyecto Final.
 
