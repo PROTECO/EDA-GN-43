@@ -97,17 +97,35 @@ Si la tarea la deciden hacer con su equipo incluyan el formato que se usó para 
 Los **REPORTES** son **individuales** y seguirán el formato que platicó en las tareas.
 
 ## Califcaciones.
+**Un poco de cultura japonesa...**
 
-|#PB|Nombre|Tareas|Proyecto|Examen|Reporte|
-|:--:|:-----------------:|:----:|:------:|:-----:|:---:|
-|1|Alan Salvador Chilpa Navarro|                    
-|2|Fabián Josafat Días Silleros|
-|3|Gerardo Daniel Gacia Cerda|
-|4|Ian Yael Leon Gallardo|
-|5|Ulices Castro Rodriguez|
-|6|Emilio Cristóbal Jiménez Treviño|
-|7|Brayan Tellez Cruz|
-|8|Pedro Eduardo Olivera Parias|
+
+En Japón se califica normalmente así los estudiantes por eso dividí la última columna según su desempeño(seinou「性能」)
+en el cual dejaré esta pequeña tabla que conseguí de [Wikipedia](https://en.wikipedia.org/wiki/Academic_grading_in_Japan).
+
+|**Grade in Japanese (Kanji)**|**English translation**|**Corresponding percentage**|**4-scale university**|
+|:---:|:-----:|:-----:|:----:|
+|shū (秀)|Exemplary, excellent|S (90–100%), rarely given|S (90–100%), rarely given|
+|yū (優)|Very good|A (80–89%)|A (80–89%)|
+|ryō (良)|Good|B (70–79%)|B (70–79%)|
+|ka (可)|Average, pass|C (60–69%)|C (60–69%)|
+|nin (認)|Approved, acceptable|D (50–59%), uncommon|D (50–59%), uncommon|
+|fuka (不可)|Unacceptable, failed|F (0–59% or 0–49%)|F (0–59% or 0–49%)|
+
+|#PB|Nombre|Tareas|Proyecto|Examen|Reporte|Puntaje 「点」|性能
+|:--:|:-----------------:|:----:|:------:|:-----:|:---:|:--:|:--:|
+|1|Alan Salvador Chilpa Navarro|1|30|17|10|58|認|                    
+|2|Fabián Josafat Días Silleros|10|60|27|15|100|秀|
+|3|Gerardo Daniel Gacia Cerda|1|16|25|15|57|認
+|4|Ian Yael Leon Gallardo|5|16|24|14|59|認|
+|5|Ulices Castro Rodriguez|-|20|27|-|47|不可|
+|6|Emilio Cristóbal Jiménez Treviño|-|24|24|-|36|不可|
+|7|Brayan Tellez Cruz|-|60|-|-|60|可|
+|8|Pedro Eduardo Olivera Parias|4|24|25|10|63|可|
+|9|Iván Fernández Cano|-|-|12|-|12|不可|
+
+Para aprobar el curso tiene que ser una calificación $n\geq6$ donde **n** es la calificación obtenida.
+
 ## Proyecto Final.
 
 Realizar una lista doblemente ligada que tenga como objetivo almacenar el tipo de dato *Alumno*, el cuál cuenta con los siguientes campos: **Nombre**, **Número de cuenta** y **edad**. Además de las formas vistas para eliminar un nodo, se debe implementar una extra que consiste en el que el usuario escoja el nodo a eliminar. Para ello, el programa deber ir mostrando cada nodo con las opciones de "ver nodo siguiente" y "ver nodo anterior", presentando la información de cada nodo. Cuando el usuario encuentre el nodo que quiere eliminar debe tener la opción de "Eliminar este nodo" y salir al menú principal.
